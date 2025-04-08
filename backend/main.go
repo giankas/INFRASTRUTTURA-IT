@@ -1,7 +1,7 @@
 package main
 
 import (
-	"project/routes"
+	"github.com/giankas/INFRASTRUTTURA-IT/backend/routes"
 
 	"github.com/gin-gonic/gin"
 )

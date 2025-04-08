@@ -1,8 +1,8 @@
 package routes
 
 import (
-	"project/controllers"
-	"project/middleware"
+	"github.com/giankas/INFRASTRUTTURA-IT/backend/controllers"
+	"github.com/giankas/INFRASTRUTTURA-IT/backend/middleware"
 
 	"github.com/gin-gonic/gin"
 )

@@ -1,0 +1,17 @@
+# Usa un'immagine base per Node.js
+FROM node:16-alpine AS builder
+
+WORKDIR /app
+
+# Copia i file package.json e installa le dipendenze
+COPY package.json package-lock.json ./
+RUN npm install
+
+# Copia il codice sorgente e compila l'app
+COPY . .
+RUN npm run build --prod
+
+# Servi l'app tramite un web server (può essere Nginx o http-server)
+FROM nginx:alpine
+COPY --from=builder /app/dist /usr/share/nginx/html
+CMD ["nginx", "-g", "daemon off;"]
